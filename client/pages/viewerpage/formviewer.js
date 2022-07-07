@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 
 import { MenuBar } from "./menubar";
 import { Container, FormBuilder, NgIf, Icon, Fab } from "../../components/";

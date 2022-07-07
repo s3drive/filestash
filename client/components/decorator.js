@@ -6,6 +6,7 @@ import { memory, currentShare } from "../helpers/";
 import { t } from "../locales/";
 
 import "../pages/error.scss";
+import {Link} from "react-router-dom";
 
 export function LoggedInOnly(WrappedComponent) {
     memory.set("user::authenticated", false);
@@ -95,6 +96,9 @@ export function ErrorPage(WrappedComponent) {
                                 this.state.has_back_button ? "back" : "home"
                             }
                         </a>
+                        <Link to="/logout" style={{ float: 'right', marginRight: '20px', marginTop: '10px' }}>
+                            <Icon name="power" style={{ height: '20px' }}/>
+                        </Link>
                         <Container>
                             <div
                                 className="error-page"

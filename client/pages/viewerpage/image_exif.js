@@ -1,6 +1,6 @@
 import React from "react";
 import EXIF from "exif-js";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import { withRouter } from "react-router-dom";
 
 import { NgIf, Icon, EventReceiver, MapShot, Button } from "../../components/";

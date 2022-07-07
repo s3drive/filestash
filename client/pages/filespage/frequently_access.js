@@ -1,5 +1,5 @@
 import React from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 
 import { Container, Icon, NgIf } from "../../components/";
 import { Link } from "react-router-dom";

@@ -2,25 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="author" content="Mickael Kerjean <mickael@kerjean.me>">
+    <title>Sync for Backblaze B2 web client</title>
+    <meta name="author" content="Syncaware <dev@syncaware.com>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/assets/manifest.json">
     <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
     <link rel="stylesheet" href="/custom.css">
     <link rel="preload" href="/api/config" as="script">
     <link rel="preload" href="/overrides/xdg-open.js" as="script">
 
     <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="Filestash" name="apple-mobile-web-app-title">
+    <meta content="Sync for Backblaze B2 web client" name="apple-mobile-web-app-title">
     <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#f2f3f5">
-    <meta name="description" content="Manage your data in your cloud">
-    <meta property="og:title" content="Filestash" />
+    <meta name="description" content="Sync for Backblaze B2 web client. Check out Android: Sync for Backblaze B2 to upload your media to cloud">
+    <meta property="og:title" content="Sync for Sync for Backblaze B2 web client" />
     <meta property="og:image" content="/assets/logo/og-image.png" />
-    <meta property="og:description" content="Manage your data in your cloud" />
+    <meta property="og:description" content="Sync for Backblaze B2 web client. Check out Android: Sync for Backblaze B2 app to upload your media to cloud" />
+    <link rel="stylesheet" href="/assets/css/loginForm.css">
   </head>
   <body>
     <script>
@@ -204,6 +205,8 @@
             if($loader) $loader.classList.add("loading");
         }, 1500);
       </script>
+      <script src="/assets/externalJs/pusher.min.js"></script>
+      <script src="/assets/externalJs/s3-backend.js"></script>
     </div>
     <noscript>
       <div>
@@ -212,5 +215,24 @@
       </div>
     </noscript>
     </div>
+
+    <style type="text/css">
+        footer {
+            font-size: 12px; text-align: center; position:fixed; bottom:10px; width: 100%;
+        }
+
+        footer > a {
+            color: #57595A
+        }
+
+        footer > a:hover {
+            text-decoration: underline;
+            color: #454748
+        }
+    </style>
+
+    <footer>
+        <a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a> | <a href="https://github.com/photosync/websyncaware.github.io">Source code</a>
+    </footer>
   </body>
 </html>

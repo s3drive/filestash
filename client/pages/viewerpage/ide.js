@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import { withRouter } from "react-router";
 import { Subject } from "rxjs/Subject";
 

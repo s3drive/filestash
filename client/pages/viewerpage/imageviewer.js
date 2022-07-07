@@ -1,6 +1,6 @@
 import React, { createRef } from "react";
 import path from "path";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 
 import { MenuBar } from "./menubar";
 import { Bundle, Icon, NgIf, Loader, EventEmitter, EventReceiver } from "../../components/";
@@ -299,7 +299,7 @@ const ImageFancy = EventEmitter(ImageFancyComponent);
 
 function Img({ src, ...props }) {
     const image_url = (url, size) => {
-        return url+"&size="+parseInt(Math.max(window.innerWidth*size, window.innerHeight*size));
+        return url;
     };
     if (!src) return null;
     return (

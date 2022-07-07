@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 
 import { Pager } from "./pager";
 import { MenuBar } from "./menubar";

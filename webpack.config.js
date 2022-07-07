@@ -13,8 +13,18 @@ const config = {
     output: {
         path: path.join(__dirname, "dist", "data", "public"),
         publicPath: "/",
-        filename: "assets/js/[name]_[chunkhash].js",
-        chunkFilename: "assets/js/chunk_[name]_[id]_[chunkhash].js",
+        filename: "assets/js/[name]_[hash].js",
+        chunkFilename: "assets/js/chunk_[name]_[id]_[hash].js",
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "dist", "data", "public"),
+        },
+        compress: true,
+        port: 9001,
+        historyApiFallback: {
+            index: "/index.html",
+        },
     },
     module: {
         rules: [
@@ -54,7 +64,6 @@ const config = {
         new webpack.DefinePlugin({
             "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "client", "index.html"),
             inject: true,

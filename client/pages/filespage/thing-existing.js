@@ -167,7 +167,7 @@ class ExistingThingComponent extends React.Component {
             const type = getMimeType(props.file.path).split("/")[0];
             if (type === "image") {
                 Files.url(props.file.path).then((url) => {
-                    this.setState({ preview: url+"&thumbnail=true" });
+                    this.setState({ preview: url });
                 });
             }
         }

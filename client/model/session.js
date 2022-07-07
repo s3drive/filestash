@@ -2,9 +2,7 @@ import { http_get, http_post, http_delete } from "../helpers/";
 
 class SessionManager {
     currentUser() {
-        const url = "/api/session";
-        return http_get(url)
-            .then((data) => data.result);
+       return window.currentUserS3()
     }
 
     oauth2(url, next) {
@@ -22,15 +20,11 @@ class SessionManager {
     }
 
     authenticate(params) {
-        const url = "/api/session";
-        return http_post(url, params)
-            .then((data) => data.result);
+        return window.authenticateS3(params)
     }
 
     logout() {
-        const url = "/api/session";
-        return http_delete(url)
-            .then((data) => data.result);
+        return window.logoutS3()
     }
 }
 

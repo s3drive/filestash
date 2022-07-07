@@ -75,7 +75,7 @@ function ConnectPageComponent({ error, history }) {
         <div className="component_page_connect">
             { window.CONFIG["fork_button"] && <ForkMe /> }
             <div style={{ paddingTop: `${_centerThis()}px` }} />
-            <Container maxWidth="565px">
+            <Container className="login_container">
                 { isLoading && <Loader /> }
                 <NgShow cond={!isLoading}>
                     <Form onLoadingChange={onFormChangeLoadingState}

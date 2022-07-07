@@ -1,3 +1,9 @@
+# Sync for Backblaze B2 web client
+> **Disclaimer**: This repository is based on: https://github.com/mickael-kerjean/filestash.
+
+======
+
+
 ![screenshot](https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/photo.jpg)
 
 <p align="center">

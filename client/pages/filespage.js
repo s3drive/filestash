@@ -36,7 +36,7 @@ export class FilesPageComponent extends React.Component {
         this.state = {
             path: (decodeURIComponent(location.pathname).replace("/files", "") || "/" ),
             sort: settings_get("filespage_sort") || CONFIG["default_sort"] || "type",
-            sort_reverse: true,
+            sort_reverse: false,
             show_hidden: settings_get("filespage_show_hidden") || CONFIG["display_hidden"],
             view: settings_get("filespage_view") || CONFIG["default_view"] || "grid",
             is_search: false,
@@ -131,7 +131,7 @@ export class FilesPageComponent extends React.Component {
             }
             this.setState({
                 metadata: res.metadata,
-                files: sort(res.results, this.state.sort),
+                files: sort(res.results, this.state.sort).reverse(),
                 selected: [],
                 loading: false,
                 is_search: false,

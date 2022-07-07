@@ -42,8 +42,7 @@ class FileSystem {
     }
 
     _ls_from_http(path, show_hidden) {
-        const url = appendShareToUrl("/api/files/ls?path=" + prepare(path));
-        return http_get(url).then((response) => {
+        return window.ls_b2_get(path).then((response) => {
             response = fileMiddleware(response, path, show_hidden);
 
             return cache.upsert(cache.FILE_PATH, [currentShare(), path], (_files) => {
@@ -152,8 +151,7 @@ class FileSystem {
     }
 
     cat(path) {
-        const url = appendShareToUrl("/api/files/cat?path=" + prepare(path));
-        return http_get(url, "raw")
+        return window.cat_b2_get(path)
             .then((res) => {
                 if (this.is_binary(res) === true) {
                     return Promise.reject({ code: "BINARY_FILE" });
@@ -184,13 +182,11 @@ class FileSystem {
     }
 
     options(path) {
-        const url = appendShareToUrl("/api/files/cat?path=" + prepare(path));
-        return http_options(url);
+       return window.options_b2(path)
     }
 
     url(path) {
-        const url = appendShareToUrl("/api/files/cat?path=" + prepare(path));
-        return Promise.resolve(url);
+       return window.url_b2(path)
     }
 
     save(path, file) {
