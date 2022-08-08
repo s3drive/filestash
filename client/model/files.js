@@ -42,7 +42,7 @@ class FileSystem {
     }
 
     _ls_from_http(path, show_hidden) {
-        return window.ls_b2_get(path).then((response) => {
+        return window.ls_s3_get(path).then((response) => {
             response = fileMiddleware(response, path, show_hidden);
 
             return cache.upsert(cache.FILE_PATH, [currentShare(), path], (_files) => {
@@ -151,7 +151,7 @@ class FileSystem {
     }
 
     cat(path) {
-        return window.cat_b2_get(path)
+        return window.cat_s3_get(path)
             .then((res) => {
                 if (this.is_binary(res) === true) {
                     return Promise.reject({ code: "BINARY_FILE" });
@@ -182,11 +182,11 @@ class FileSystem {
     }
 
     options(path) {
-       return window.options_b2(path)
+       return window.options_s3(path)
     }
 
     url(path) {
-       return window.url_b2(path)
+       return window.url_s3(path)
     }
 
     save(path, file) {

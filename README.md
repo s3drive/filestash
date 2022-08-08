@@ -1,4 +1,4 @@
-# Sync for Backblaze B2 web client
+# Sync for S3 web client
 > **Disclaimer**: This repository is based on: https://github.com/mickael-kerjean/filestash.
 
 ======
